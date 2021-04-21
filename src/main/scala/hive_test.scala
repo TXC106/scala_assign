@@ -17,7 +17,7 @@ object hive_test {
     }
     println(NowDate())
   }
-  val ss = SparkSession.builder().master("local[2]").appName("the test of SparkSession").enableHiveSupport().getOrCreate()
+  val ss = SparkSession.builder().master("local").appName("the test of SparkSession").enableHiveSupport().getOrCreate()
   val df = ss.sql("show databases")
   df.show
   ss.stop()
